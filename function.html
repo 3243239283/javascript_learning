@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5.5-function类型</title>
+</head>
+<body>
+	<p>Function类型：1、可以用变量的形式去定义函数。2、没有重载（同名的函数，后面的函数会覆盖前面的函数）。</p>
+	<!-- <script type="text/javascript">
+		var sum=function (num1,num2){
+			return num1+num2;
+		};
+		var anotherSum=sum;
+		sum=null;
+		alert(anotherSum(1,8))
+	</script> -->
+	<p>函数声明与函数表达式的区别。</p>
+	<script type="text/javascript">
+		//函数声明：解析器率先读取。
+		alert(sum2(3,3));
+		function sum2(num1,num2){
+			return num1+num2;
+		};
+		
+		//函数表达式：执行到所在代码才会被解析执行
+		alert(sum3(2,2));//此处会报错：sum3 is not a function
+		var sum3=function (num1,num2){
+			return num1+num2;
+		};
+	</script>
+</body>
+</html>
