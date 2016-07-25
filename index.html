@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js</title>
+</head>
+<body>
+	<div class="val"></div>
+	<script type="text/javascript">
+	//正序
+	function compare(value1,value2){
+		if(value1<value2){
+			return -1;
+		}else if(value1>value2){
+			return 1;
+		}else{
+			return 0;
+		}
+	}
+	//倒序
+	function compare2(value1,value2){
+		if(value1<value2){
+			return 1;
+		}else if(value1>value2){
+			return -1;
+		}else{
+			return 0;
+		}
+	}
+
+	var values=[0,1,5,10,15];
+	var values2=[0,1,5,10,15];
+	values.sort(compare);
+	values2.sort(compare2);
+	alert(values);
+	alert(values2);
+	</script>
+</body>
+</html>

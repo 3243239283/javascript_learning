@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5.2.6操作方法</title>
+</head>
+<body>
+	<p>concat()方法基于当前数组创建一个新数组。准确来说，是创建当前数组的一个副本。</p>
+	<!-- <script type="text/javascript">
+		var colors=['red','green','blue'];
+		var colors2=colors.concat('yellow',['black','brown']);
+		alert(colors);
+		alert(colors2);
+	</script> -->
+
+	<p>slice()方法基于当前数组的一个或多个项创建一个新数组，此方法接受一到两个参数，纪要返回项的起始和结束位置。</p>
+	<!-- <script type="text/javascript">
+		var arr=['red','green','blue'];
+		var arr2=colors.slice(1,2);
+		alert(arr);
+		alert(arr2);
+	</script> -->
+
+	<p>splice()主要用于向数组中插入项。此方法有三种使用方式。1、删除2、插入3、替换</p>
+	<script type="text/javascript">
+		var num=['red','green','blue'];
+		//var removed=num.splice(1,1);							//删除，第一个参数表示要删除的位置，第二个参数表示要删除的位数。
+		//var removed=num.splice(1,0,'yellow','orange');		//从位置1开始插入两项
+		var removed=num.splice(1,1,'yellow','orange');			//删除位置为1的项，并且从位置1的地方插入两项
+		alert(num);
+		alert(removed);
+	</script>
+</body>
+</html>
