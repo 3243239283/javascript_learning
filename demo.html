@@ -22,13 +22,26 @@
 	</script> -->
 
 	<p>splice()主要用于向数组中插入项。此方法有三种使用方式。1、删除2、插入3、替换</p>
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		var num=['red','green','blue'];
 		//var removed=num.splice(1,1);							//删除，第一个参数表示要删除的位置，第二个参数表示要删除的位数。
 		//var removed=num.splice(1,0,'yellow','orange');		//从位置1开始插入两项
 		var removed=num.splice(1,1,'yellow','orange');			//删除位置为1的项，并且从位置1的地方插入两项
 		alert(num);
 		alert(removed);
+	</script> -->
+
+	<p>reduce()归并方法,从数组第一项开始，逐个遍历到最后。reduceRight()则从数组最后一项开始，向前遍历到第一项。</p>
+	<script type="text/javascript">
+		var values=[1,2,3,4,5];
+		var sum=values.reduce(function(prev,cur){
+			return prev+cur;
+		});
+		var sum2=values.reduceRight(function(prev,cur){
+			return prev+cur;
+		});
+		alert(sum);
+		alert(sum2);
 	</script>
 </body>
 </html>
