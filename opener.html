@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>opener</title>
+</head>
+<body>
+	<script type="text/javascript">
+		document.onclick=function(){
+			window.opener.document.write('子窗口让我输出一行文字！');
+		}
+	</script>
+</body>
+</html>

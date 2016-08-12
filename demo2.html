@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5.5.3-作为值的函数</title>
+</head>
+<body>
+	<p>全局作用域，注：h函数的名字仅仅是一个包含指针的变量而已。</p>
+	<script type="text/javascript">
+		window.color="red";
+		var o={color:"blue"};
+		function sayColor(){
+			alert(this.color);
+		}
+		sayColor();				//red  全局作用域
+
+		o.sayColor=sayColor;	//将函数赋给对象
+		o.sayColor();
+		
+		sayColor.call(o);		//call()与apply()的强大在于扩充函数赖以运行的作用域。不用像上面必须赋值给对象。
+	</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+</head>
+<body>
+<ul>
+	<li>1、window对象是最顶层的对象</li>
+	<li>2、window对象有六大属性，这六大属性本身也是对象</li>
+	<li>3、window对象旗下的document属性也是对象，并且document旗下有五大属性</li>
+	<li>4、document对象旗下五大属性又是对象。总结：都是对象。</li>
+	<li><p>location对象、<br>history对象</p></li>
+</ul>
+<ul>
+	<li>注：</li>
+	<li>1、旧版本的火狐有状态栏，但属性应该默认情况下是无效的，新版本取消了状态栏。</li>
+	<li>2、谷歌也没有状态栏。</li>
+</ul>
+<ul>
+	<li>新建窗口open()的参数：</li>
+	<li>1、第一个参数是你要导航的URL</li>
+	<li>2、窗口名称或窗口目标，可以给新窗口设置一个名称，凡是以这个名称打开的窗口都在当前窗口加载URL（不再新增窗口）。</li>
+	<li>目标：_blank新建窗口、_parent表示在本窗口加载</li>
+	<li>3、特定字符串，表示各种窗口配置的功能</li>
+	<li>注：open()本身会返回子窗口的window对象，表示子窗口弹出。</li>
+</ul>
+
+	<script type="text/javascript">
+	/*
+
+		//弹出警告框window.alert('Lee');
+		alert('Lee');  //alert本身就是window对象的一个方法，所有浏览器都认识,所有可以不加wimdow.。
+		
+		//确定和取消
+		//confirm('请确认？');	//这里有确定和取消按钮，本身可以返回一个布尔值。点击确定返回true,点击取消返回false。
+		if(confirm('请确认？')){
+			alert('您按了确定！');
+		}else{
+			alert('您按了取消！');
+		}
+		
+		//输入提示框
+		var box=prompt('请输入一个数字',0); //第一个参数是说明，第二个参数是默认值。返回输入的值。
+		if(box != null){
+			alert(box);
+		}else{
+			alert(0);
+		}
+
+		//调出打印及查找对话框
+		print();
+		find();
+
+		//浏览器底部状态栏初始默认值<span onmouseover="a()">测试</span>
+		defaultStatus='Lee';//初始默认值
+		function a(){
+			status='XXX';	//临时设置状态栏属性
+		};
+		function b(){
+			defaultStatus='XXX';
+		};
+
+		//新建窗口open()
+		var box=window.open('http://baidu.com','哈哈哈','width=400px,height=400px,top=100px,left=100px');
+		box.alert('Lee');
+
+	*/
+		//子窗口操作父窗口
+		window.open('opener.html','子窗口','width=600px,height=400px,top=100px,left=100px');
+
+		
+		
+
+	</script>
+	
+</body>
+</html>

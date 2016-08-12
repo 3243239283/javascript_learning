@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>6.2创建对象</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<p>6.2.1工厂模式 <br><img src="img/1.png" alt=""></p>
+	<script type="type/javascript">
+		function createPerson(name,age,job){
+			var o=new Object();
+			o.name=name;
+			o.age=age;
+			o.job=job;
+			o.sayName=function(){
+				alert(this.name);
+			};
+			return o;
+		}
+		var person1=createPerson('anne',22,'web');
+		var person2=createPerson('jean',24,'java');
+	</script>
+	<p>6.2.2构造函数模式</p>
+	<p>对比工厂模式来说1、没有显式的创建对象2、直接将属性和方法赋给this对象3、没有return语句。<br><img src="img/2.png" alt=""></p>
+	<script type="type/javascript">
+		function Person(name,age,job){
+			this.name=name;
+			this.age=age;
+			this.job=job;
+			this.sayName=function(){
+				alert(this.name);
+			};
+		}
+		var person3=new Person("anne",22,"web");
+		person3.sayName();
+		var person4=new Person("jean",24,"java");
+		person4.sayName();
+
+		Person("Greg",27,"Doctor");
+		window.sayName();
+	</script>
+</body>
+</html>

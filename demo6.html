@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象6.3继承</title>
+</head>
+<body>
+	<script type="text/javascript">
+	/*
+		(function(){			//通过自我执行来执行匿名函数
+			alert('lee');
+		})();
+
+		//把匿名函数自我执行的返回值赋给变量box
+		var box=(function(){
+			return 'lee2';
+		})();
+		alert(box);
+
+		//自我执行后用alert打印
+		alert((function(){
+			return 'lee3';
+		})());
+
+		//自我执行匿名函数的传参
+		(function(age){
+			alert(age);
+		})(100);
+
+		//函数里面的函数-闭包
+		function box(){
+			return function(){
+				return 'lee';
+			}
+		};
+		alert(box); alert(box()); alert(box()());
+		
+		//函数里面的函数-闭包
+		function box(){
+			return function(){
+				return 'lee';
+			}
+		};
+		var b=box(); alert(b); alert(b());
+
+		//通过闭包返回局部变量
+		function box(){
+			var age=100;
+			return function(){
+				return age;
+			}
+		};
+		alert(box()());
+
+		//使用全局变量进行累加
+		var age=100;
+		function box(){
+			age++;
+		};
+		alert(age);
+		box();
+		alert(age);
+		box();
+		alert(age);
+
+		//使用局部变量进行累加发现每次age都会被初始化，所以不管运行几次都是101。
+		function box(){
+			var age=100;
+			age++;
+			return age;
+		};
+		alert(box());
+		alert(box());
+
+	*/
+
+		//使用匿名函数实现局部变量驻留内存中从而实现累加
+		function box(){
+			var age=100;
+			return function(){
+				age++;
+				return age;
+			}
+		};
+		var b=box();
+		//这样运行的好处是每次都只运行函数里面的匿名函数，所以age不会被初始化，从而实现了局部变量的累加。
+		alert(b());
+		alert(b());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+	</script>
+</body>
+</html>
