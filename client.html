@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>插件检测</title>
+	<script src="js/browserdetect.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+	/*
+		//能力检测
+		var width=window.innerWidth;
+		if(typeof width != 'number'){
+			width=document.documentElement.clientWidth;
+		}
+		alert(width);
+
+		//怪癖检测
+		var box={
+			toString:function(){},		//IE的小bug
+			toString2:function(){}
+		}
+		for(var o in box){
+			alert(o);
+		}
+	
+	*/
+	document.write(navigator.userAgent);
+	var client=function(){		
+		//引擎
+		var engine={			//这个属性用于确定是否是ie引擎
+			ie:false,
+			gecko:false,
+			webkit:false,
+			khtml:false,
+			opera:false,
+			//引擎的版本
+			ver:0
+		};
+		var ua=navigator.userAgent;
+		//核心检测程序
+		if(window.opera){		
+			engine.opera=true;			//表示确定opera引擎
+			engine.ver=window.opera.version;
+		}else if(/AppleWebKit\/(\S+)/.test(ua)){
+			engine.webkit=true;			//表示确定webkit引擎
+			engine.ver=RegExp['$1'];
+		}
+
+		return{					//返回一个对象，可以同时返回引擎浏览器和系统的对象
+			engine:engine		//前一个engine是属性，后一个engine是对象值
+		}
+	}();					//自我执行并赋值
+	
+	if(client.engine.opera){
+		alert('目前使用的是opera浏览器，版本为'+client.engine.ver);
+	}
+	if(client.engine.webkit){
+		alert('webkit引擎的版本为'+client.engine.ver);
+	}
+	
+
+
+
+
+	</script>
+</body>
+</html>

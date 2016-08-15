@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BOM</title>
+</head>
+<body>
+<ul>
+	<li>setTimeout:（超时调用）</li>
+	<li>1、第一个参数可以是字符串，而里面可以是代码块，因为它有解析的功能，所以引号内的代码是可以执行的。</li>
+	<li>clearTimeout:(取消超时调用)</li>
+	<li>1、取消超时调用</li>
+	<li>setInterval:(间歇调用)</li>
+	<li>1、可以重复不断执行</li>
+	<li>clearInterval:(取消间歇调用)</li>
+	<li>2、可以中断重复执行的代码</li>
+	<li>location:</li>
+	<li>1、返回当前页面URL</li>
+</ul>
+<div class="timebox">计时：<span id="a"></span></div>
+	<script type="text/javascript">
+	/*
+		//这种写法不推荐，容易出错，不容易扩展。
+		setTimeout("alert('Lee')",4000);
+
+		//第二种写法
+		function box(){
+			alert('Lee');
+		};
+		setTimeout(box,2000)
+
+		//推荐的写法（扩展性好、封装性好）
+		setTimeout(function box(){
+			alert('Lee');
+		},2000);
+
+		//取消超时调用
+		var box=setTimeout(function box(){
+			alert('Lee');
+		},2000);
+		clearTimeout(box);
+
+		//间歇调用(重复调用)
+		setInterval(function(){
+			alert('Lee');
+		},1000);
+
+		//间歇调用(重复调用)
+		var box=setInterval(function(){
+			alert('Lee');
+		},1000);
+		clearInterval(box);
+
+		//定时器
+		var num=0;
+		var max=5;
+		var time=setInterval(function(){
+			num++;
+			document.getElementById('a').innerHTML+=num;
+			if(num==max){
+				clearInterval(time);
+				alert('五秒到了！');
+			};
+		},1000);
+	*/
+		//location
+		location.hash='?id=5';		//设置锚点
+		//alert(window.location);		//url
+		//alert(location.hash);		//获取url锚点
+		//alert(location.port);		//获取端口号
+		//location.href='http://baidu.com';	//跳转到指定链接
+		//alert(history.length);	//获取历史记录的总量
+		function back(){
+			history.back();
+		}
+		function forward(){
+			history.forward();
+		}
+		function go(num){
+			history.go(num);
+		}
+
+	</script>
+	<a href="javascript:back();">prev</a>
+	<a href="javascript:forward();">next</a>
+	<a href="javascript:go(-1);">go</a>
+</body>
+</html>

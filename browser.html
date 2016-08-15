@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浏览器检测</title>
+	<script src="js/browserdetect.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+	/*
+		navigator对象是window对象下的
+		alert(window.navigator);
+		alert(navigator.appVersion);		//浏览器版本
+		alert(navigator.appName);			//浏览器名称
+		alert(navigator.userAgent);			//用户代理字符串，表示浏览器信息的东西
+		alert(navigator.platform);			//浏览器所在系统
+
+		alert(BrowserDetect.browser);		//浏览器名称
+		alert(BrowserDetect.version);		//浏览器版本
+		alert(BrowserDetect.OS);			//所在系统
+		//给IE7的浏览器做特殊处理
+		if(BrowserDetect.browser == 'Internet Explorer' && BrowserDetect.version<7){
+			alert('需要做IE7版本的兼容！');
+		}
+	*/
+		alert(BrowserDetect.browser);		//浏览器名称
+		alert(BrowserDetect.version);		//浏览器版本
+		alert(BrowserDetect.OS);			//所在系统
+		//给IE7的浏览器做特殊处理
+		if(BrowserDetect.browser == 'Internet Explorer' && BrowserDetect.version<7){
+			alert('需要做IE7版本的兼容！');
+		}
+
+
+	
+
+
+
+
+	</script>
+</body>
+</html>

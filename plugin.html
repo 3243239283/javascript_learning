@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>插件检测</title>
+	<script src="js/browserdetect.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+	/*
+		//给IE7的浏览器做特殊处理
+		if(BrowserDetect.browser == 'Internet Explorer' && BrowserDetect.version<7){
+			alert('需要做IE7版本的兼容！');
+		}
+		
+		//显示浏览器插件详细信息
+		alert(navigator.plugins);
+		for(var i=0;i<navigator.plugins.length;i++){
+			document.write('插件名：'+navigator.plugins[i].name+'<br/>');
+			document.write('文件名：'+navigator.plugins[i].filename+'<br/>');
+			document.write('插件描述：'+navigator.plugins[i].description+'<br/>');
+			document.write('<br/>');
+		}
+
+		//检测非IE浏览器插件是否存在
+		function hasPlugin(name){
+			var name=name.toLowerCase();
+			for(var i=0;i<navigator.plugins.length;i++){
+				if(navigator.plugins[i].name.toLowerCase().indexOf(name)>-1){
+					return true;
+				}
+			}
+			return false;
+		};
+		alert(hasPlugin('Flash'));
+
+		//检测IE浏览器的控件
+		function hasIEPlugin(){
+			try{							//这里尝试着去执行一段代码，如果有误就去执行catch里面的代码。
+				new ActiveXObject(name);	//这里的那么必须是控件的唯一标识符ID
+				return true;				//如果new成功了，没有产生错误，那么就不去执行catch的代码
+			}catch(e){
+				return false;				//如果new失败了，那么执行catch的代码。
+			}
+		}
+		alert(hasIEPlugin('ShockwaveFlash.ShockwaveFlash'));	//这里必须传flash空间的唯一标识符“ShockwaveFlash.ShockwaveFlash”。
+	*/
+		//跨浏览器检测Falsh是否存在
+		//非IE
+		function hasPlugin(name){
+			var name=name.toLowerCase();
+			for(var i=0;i<navigator.plugins.length;i++){
+				if(navigator.plugins[i].name.toLowerCase().indexOf(name)>-1){
+					return true;
+				}
+			}
+			return false;
+		};
+		//IE
+		function hasIEPlugin(){
+			try{
+				new ActiveXObject(name);
+				return true;
+			}catch(e){
+				return false;
+			}
+		}
+		function hasFalsh(){
+			//先检测非IE的浏览器
+			var result=hasPlugin('Flash'); 	//如果返回true，说明检测到了。并且不是IE浏览器
+			if(!result){					//如果没有检测到说明这个浏览器没有Falsh插件
+				result=hasIEPlugin('')
+			}
+			return result;
+		}
+		
+	
+
+
+
+
+	</script>
+</body>
+</html>
